@@ -1,0 +1,22 @@
+databases:
+  - name: hrm_database
+    databaseName: oms_database_prod
+    user: rails
+    plan: free
+
+services:
+  - type: web
+    name: OMS-Backend
+    runtime: ruby
+    plan: free
+    buildCommand: "./render-build.sh"
+    startCommand: "./bin/rails server"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: hrm_database
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default

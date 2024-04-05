@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to OMS Portal</title>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F4F4F4;
+    }
+    .container {
+      margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .top-container {
+      padding: 20px;
+      background-color: #13133A;
+      color: #FFF;
+    }
+    .bottom-container {
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .footer {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="top-container">
+    <center>
+      <div class="text-center">
+       <%= image_tag attachments['logo.png'].url, style: "width: 60px; height: 60px; border-radius: 40%;" %>
+     </div>
+    </center>   
+    <h2 class="text-center">Attendance Adjustment Request </h2>
+  </div>
+  <div class="bottom-container">
+    <p>Hi,</p>
+    <% if @user.type == "Organization" %>
+      <p><%=@user.owner_name%>,</p>
+    <% else %>
+      <p><%=@user.first_name%>,</p>
+    <% end %>
+    <p><%=@regularization&.user&.first_name%> has applied for Attendance Adjustment request.</p>
+    <h2>Attendance Request Details</h2>
+    <hr>
+    <p>Date : <%= @regularization&.date%></p>
+    <p>Attendance Request Type : Attendance Regularization</p>
+    <p>Reason : Hello ma'am got a few minutes late on that day please regularise this attendance </p>
+    <div class="d-flex justify-content-center">
+        <table cellspacing="0" cellpadding="0">
+            <tr>
+                <td bgcolor="#ffffff" style="border-radius: 5px;">
+                    <a href="#" target="_blank" style="font-size: 16px; font-family: Arial, sans-serif; color: #ffffff; text-decoration: none; padding: 12px 20px; border: #888; display: flex; background-color: #04AA6D; border-radius: 4px; font-weight: bold; margin: 10px 5px;">Approve</a>
+                </td>
+                <td bgcolor="#ffffff" style="border-radius: 5px;">
+                    <a href="#" target="_blank" style="font-size: 16px; font-family: Arial, sans-serif; color: #ffffff; text-decoration: none; padding: 12px 20px; border: #888; display: flex; background-color:  #ce0c0c; border-radius: 4px; font-weight: bold; margin: 10px 5px;">Reject</a>
+                </td>
+                <td bgcolor="#ffffff" style="border-radius: 5px;">
+                    <a href="#" target="_blank" style="font-size: 16px; font-family: Arial, sans-serif; color: #ffffff; text-decoration: none; padding: 12px 20px; border: #888; display: flex; background-color: #230ee1; border-radius: 4px; font-weight: bold;  margin: 10px 5px;">Cancel</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <hr>
+    <p>Note : Any penalization that might have happened due to attendance discrepancies (Tracking Policy) will be cancelled and leave will be credited back.</p>
+    <p>Thanks for joining and have a great day.</p>
+    <br>
+    <footer class="footer">
+      Regards, TaskCraft Technologies LLP
+    </footer>
+  </div>
+  <center>
+      <div class="text-center">
+       <%= image_tag attachments['logo.png'].url, style: "width: 60px; height: 60px; border-radius: 40%;" %>
+     </div>
+  </center>   
+</div>
+</body>
+</html>

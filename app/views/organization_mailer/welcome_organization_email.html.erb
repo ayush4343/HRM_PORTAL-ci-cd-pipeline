@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to OMS Portal</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #F4F4F4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        margin-top: 0px;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .bottom-container {
+        max-width: 600px;
+        margin: 20px auto;
+        margin-top: 0px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .top-container{
+    max-width: 600px;
+      margin: 20px auto;
+      margin-bottom: 0px;
+      padding: 20px;
+      height: 95px;
+      background-color: #13133A;
+    }
+    h2 {
+        color: white;
+        text-align: center;
+        font-size: 1.3em;
+    }
+    h3 {
+        color: #333;
+        text-align: center;
+        font-size: 1.1em;
+    }
+    p {
+        color: #888;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 0.8em;
+    }
+    img{
+      width: 75px;
+      height: 20px;
+    }
+    .top{
+      width: 70px;
+      height: 55px;
+    }
+  </style>
+</head>
+<body>
+ <div class="container">
+    <div class="top-container">
+      <center>
+          <div class="text-center">
+           <%= image_tag attachments['logo.png'].url, style: "width: 60px; height: 60px; border-radius: 40%;" %>
+         </div>
+      </center>   
+      <h2>Welcome to OMS Portal</h2>
+    </div>
+    <div class="bottom-container">
+      <h3>Your email is <%= @organization.email %></h3>
+      <p>You have successfully signed up to OMS portal.</p>
+      <p>Thanks for joining and have a great day.</p>
+    </div>
+      <center>
+          <div class="text-center">
+           <%= image_tag attachments['logo.png'].url, style: "width: 60px; height: 60px; border-radius: 40%;" %>
+         </div>
+      </center>   
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
